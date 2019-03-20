@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>作业4</title>
+		<script type="text/javascript">
+			function huMing() {
+				if(document.getElementById("yongHuMing").value == "") {
+					document.getElementById("hongDian").innerHTML = "用户名不能为空";
+				} else if(document.getElementById("miMa").value == "") {
+					document.getElementById("diEr").innerHTML = "密码不能为空";
+				} else if(document.getElementById("miMa").value != document.getElementById("queRen").value) {
+					document.getElementById("diSan").innerHTML = "密码不一致";
+				} else {
+					document.getElementById("hongDian").innerHTML = "√";
+					document.getElementById("diEr").innerHTML = "√";
+					document.getElementById("diSan").innerHTML = "√";
+					document.forms[0].action = "success.html";
+					document.forms[0].submit();
+				}
+			}
+
+			function getProvince() {
+				var nian = document.getElementById("mynian");
+				for(var i = 1900; i < 2018; i++) {
+					var option = new Option;
+					option.text = i;
+					option.value = i;
+					nian.add(option);
+				}
+			}
+
+			function mynian() {
+				var nian = document.getElementById("mynian");
+				var yue = document.getElementById("myyue");
+				var yueIndex = nian.selectedIndex;
+				if(yue.options.length != 0) {
+					yue.options.length = 0
+				}
+				for(var b = 1; b <= 12; b++) {
+					var option = new Option;
+					option.text = b;
+					option.value = b;
+					yue.add(option);
+				}
+			}
+
+			function aa() {
+				var nian = document.getElementById("mynian");
+				var yue = document.getElementById("myyue");
+				var ri = document.getElementById("qw");
+				var yueIndex = nian.selectedIndex;
+				var riIndex = yue.selectedIndex;
+				if(ri.options.length != 0) {
+					ri.options.length = 0
+				}
+				var s;
+				if(yue.value == "2" && nian.value % 400 == 0 || nian.value % 4 == 0 && nian.value % 100 != 0) {
+					s = 29;
+				} else if(yue.value == "2") {
+					s = 28;
+				}
+				if(yue.value == "1" || yue.value == "3" || yue.value == "5" || yue.value == "7" || yue.value == "8" || yue.value == "10" || yue.value == "12") {
+					s = 31;
+				} else if(yue.value == "4" || yue.value == "6" || yue.value == "9" || yue.value == "11") {
+					s = 30;
+				}
+				for(var b = 1; b <= s; b++) {
+					var option = new Option;
+					option.text = b;
+					option.value = b;
+					ri.add(option);
+
+				}
+			}
+
+			function getShenfen() {
+				var pro = document.getElementById("shenfen");
+				var proArray = ["河北", "河南"];
+				for(var i = 0; i < proArray.length; i++) {
+					var getoption = new Option();
+					getoption.text = proArray[i];
+					getoption.value = i;
+					pro.add(getoption);
+
+				}
+			}
+
+			function addCity() {
+				var proinceNumber = document.getElementById("shenfen").selectedIndex;
+				var cityobj = document.getElementById("city");
+				document.getElementById("city").length = 0;
+				var cityArray = [
+
+					["石家庄", "邯郸", "唐山"],
+					["郑州", "洛阳"]
+				];
+				if(city.options.length != 0) {
+					city.options.length = 0;
+				}
+				for(var i = 0; i < cityArray[proinceNumber].length; i++) {
+					var newCity = new Option();
+					newCity.text = cityArray[proinceNumber][i];
+					cityobj.options.add(newCity);
+				}
+
+			}
+
+			function addqu() {
+				var proinceNumber = document.getElementById("shenfen").selectedIndex;
+				var cityNumber = document.getElementById("city").selectedIndex;
+				var quobj = document.getElementById("qu");
+				document.getElementById("qu").length = 0;
+				var quArray = [
+
+					[
+						["裕华区", "新华区"],
+						["邯郸1", "handan"],
+						["老城区", "xinchenqu"]
+					],
+					[
+						["郑州1", "郑州2"],
+						["luoyang", "洛阳2"]
+					]
+				];
+				for(var i = 0; i < quArray[proinceNumber][cityNumber].length; i++) {
+					var newqu = new Option();
+					newqu.text = quArray[proinceNumber][cityNumber][i];
+					quobj.options.add(newqu);
+				}
+			}
+
+			function test() {
+				var getyundong = document.getElementsByName("yundong");
+				for(i = 0; i < getyundong.length; i++) {
+					getyundong[i].checked = true;
+				}
+			}
+
+			function test1() {
+				var getyungong = document.getElementsByName("yundong");
+				for(i = 0; i < getyungong.length; i++) {
+					if(getyungong[i].checked) {
+						getyundong[i].checked != getyundong[i].checked;
+					}
+				}
+			}
+
+			function test2() {
+				var getyundong = document.getElementsByName("yundong");
+				for(i = 0; i < getyundong.length; i++) {
+					getyundong[i].checked = false;
+				}
+			}
+
+			function changchesbox(radioObj) {
+				var taObj = document.myForm.userDescribe;
+				var sexInfo = ""
+				if(radioObj.checked) {
+					sexInfo = radioObj.value;
+				}
+				if(sexInfo == "man") {
+					taObj.innerHTML = "你是大帅哥。"
+				} else if(sexInfo == "nv") {
+					taObj.innerHTML = "不是大美女。"
+				}
+			}
+
+			function tijiao() {
+				var gettijiao = document.getElementById("tijiao");
+				document.forms[0].action = "success.html";
+			}
+		</script>
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+			}
+			
+			span {
+				color: #FF0004;
+			}
+		</style>
+	</head>
+
+	<body onload="getProvince(),mynian(),aa(),getShenfen(),addCity(),addqu()">
+		<form name="myForm" action="" method="post">
+
+		<table border="1px" width="600px" height="332px" align="center" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" height="52px" align="center">
+					<img src="img/紫光标识.jpg" width="595" height="64" />
+				</td>
+			</tr>
+
+			<tr>
+				<td width="150px">用户名</td>
+				<td><input type="text" id="yongHuMing"><span id="hongDian">*</span></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" id="miMa"><span id="diEr">*</span></td>
+			</tr>
+			<tr>
+				<td>确认密码</td>
+				<td><input type="password" id="queRen"><span id="diSan">*</span></td>
+			</tr>
+			<tr>
+				<td align="right">性&nbsp;&nbsp;&nbsp;别: </td>
+				<td>
+					男<input type="radio" value="man" name="userSex" onclick="changchesbox(this)" checked="checked" /> 女
+					<input type="radio" value="nv" name="userSex" onclick="changchesbox(this)" /></td>
+			</tr><br/>
+
+			<tr>
+				<td align="right">出生日期: </td>
+				<td align="left">
+					<select id="mynian" name="mynian" onchange="mynian()">
+
+					</select>年
+					<select id="myyue" name="myyue" onchange="aa()">
+
+					</select>月
+					<select id="qw" name="qw">
+
+					</select>日
+				</td>
+			</tr><br/>
+
+			<tr>
+				<td width="150px" height="35px" align="right">爱&nbsp;&nbsp;&nbsp;好: </td>
+				<td align="left">
+					足球
+					<input type="checkbox" value="football" name="yundong" /> 篮球
+					<input type="checkbox" value="basketball" name="yundong" /> 游泳
+					<input type="checkbox" value="swimming" name="yundong" />
+					<input type="button" name="" id="" value="全选" onclick="test()" />
+					<input type="button" name="" id="" value="返选 " onclick="test1()" />
+					<input type="button" name="" id="" value="全不选" onclick="test2()" />
+
+				</td>
+			</tr><br/>
+			<tr>
+				<td width="150px" height="35px" align="right">籍&nbsp;&nbsp;&nbsp;贯: </td>
+				<td>
+					<select id="shenfen" name="shenfen" onchange="addCity()"></select>省
+					<select id="city" name="city" onchange="addqu()"></select>市
+					<select id="qu" name="qu"></select>区
+				</td>
+			</tr>
+
+			<tr>
+				
+
+					<td align="right">个<br/>人<br/>简<br/>介<br/></td>
+					<td><textarea cols="50" rows="20" name="userDescribe" id="userDescribe">你是大帅哥。</textarea></td>
+
+				
+			</tr>
+			<tr>
+				<td>公司网址</td>
+				<td ><a href="#">http://www.baidu.com</a></td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center">
+					<input id="tijiao" type="submit" value="提交" onclick="huMing()" />
+				</td>
+			</tr>
+
+		</table>
+		</form>
+	</body>
+
+</html>

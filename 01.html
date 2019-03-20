@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>新浪</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#divOut {
+				border: 1px solid black;
+				width: 1190px;
+				position: absolute;
+				left: 170px;
+			}
+			
+			#div0 {
+				height: 800px;
+				position: relative;
+				background-image: url(img/bghead.jpg);
+				background-repeat: no-repeat;
+				background-color: #dfecf5;
+			}
+			
+			#div01 {
+				border: 1px solid black;
+				height: 500px;
+				width: 780px;
+				position: absolute;
+				top: 80px;
+				margin: 0px 200px;
+				background-image: url(img/bghead_top_com.gif);
+				background-repeat: no-repeat;
+				background-color: white;
+			}
+			
+			#div011 {
+				position: relative;
+				top: 40px;
+			}
+			
+			#div011 {
+				position: relative;
+				top: 200px;
+			}
+			
+			#div012 {
+				left: 110px;
+				top: 80px;
+			}
+			
+			#div014 {
+				left: 185px;
+				top: 170px;
+			}
+			
+			#div015 {
+				left: 120px;
+				top: 220px;
+			}
+			
+			#div016 {
+				left: 110px;
+				top: 270px;
+			}
+			
+			#div017 {
+				left: 157px;
+				top: 345px;
+			}
+			
+			#div018 {
+				left: 130px;
+				top: 400px;
+			}
+			
+			#div019 {
+				left: 340px;
+				top: 445px;
+			}
+			
+			#div02 {
+				top: 35px;
+				left: 200px;
+			}
+			
+			#div03 {
+				top: 60px;
+				left: 880px;
+			}
+			
+			#div04 {
+				top: 700px;
+				left: 250px;
+			}
+			
+			#div05 {
+				top: 100px;
+				left: 960px;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			span {
+				color: white;
+			}
+			#button{
+				width: 95px;
+				height: 28px;
+				background-image: url(img/btn1.gif);
+			}
+		</style>
+		<script>
+			function huMing() {
+				if(document.getElementById("yongHuMing").value == "") {
+					document.getElementById("hongDian").innerHTML = "用户名不能为空";
+				} else if(document.getElementById("miMa").value == "") {
+					document.getElementById("diEr").innerHTML = "密码不能为空";
+				} else if(document.getElementById("miMa").value != document.getElementById("queRen").value) {
+					document.getElementById("diSan").innerHTML = "密码不一致";
+				} else {
+					document.getElementById("hongDian").innerHTML = "√";
+					document.getElementById("diEr").innerHTML = "√";
+					document.getElementById("diSan").innerHTML = "√";
+					document.forms[0].action = "success.html";
+					document.forms[0].submit();
+				}
+			}
+			function getShenfen() {
+				var pro = document.getElementById("shenfen");
+				var proArray = ["请选择", "河北", "河南"];
+				for(var i = 0; i < proArray.length; i++) {
+					var getoption = new Option();
+					getoption.text = proArray[i];
+					getoption.value = i;
+					pro.add(getoption);
+
+				}
+			}
+
+			function addCity() {
+				var proinceNumber = document.getElementById("shenfen").selectedIndex;
+				var cityobj = document.getElementById("city");
+				document.getElementById("city").length = 0;
+				var cityArray = [
+					["请选择"],
+					["石家庄", "邯郸", "唐山"],
+					["郑州", "洛阳"]
+				];
+				if(city.options.length != 0) {
+					city.options.length = 0;
+				}
+				for(var i = 0; i < cityArray[proinceNumber].length; i++) {
+					var newCity = new Option();
+					newCity.text = cityArray[proinceNumber][i];
+					cityobj.options.add(newCity);
+				}
+
+			}
+
+			
+		</script>
+	</head>
+
+	<body onload="getShenfen(),addCity()">
+		<div id="divOut" style="text-align: center;">
+			<div id="div0">
+				<div id="div02" style="position:absolute;">
+					<img src="img/logo.png" />&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="#">注册</a>
+				</div>
+				<div id="div03" style="position: absolute;">
+					<p>
+						<a class="" href="#"><span>新浪首页</span></a>
+						<a href="#"><span>帮助</span></a>
+					</p>
+
+				</div>
+				<div id="div04" style="position: absolute;">
+					<p>
+						客户服务电话 <span style="color: blue;">400-490-0000</span> &nbsp;欢迎批评指正</br>
+						<a href="#">新浪简介</a>&nbsp;|&nbsp;
+						<a href="#">about Sina</a>&nbsp;|&nbsp;
+						<a href="#">广告服务</a>&nbsp;|&nbsp;
+						<a href="#">联系我们</a>&nbsp;|&nbsp;
+						<a href="#">招聘信息</a>&nbsp;|&nbsp;
+						<a href="#">网站律师</a>&nbsp;|&nbsp;
+						<a href="#">SINa English</a>&nbsp;|&nbsp;
+						<a href="#">会员注册</a>&nbsp;|&nbsp;
+						<a href="#">产品答疑</a>
+						</br>
+						Copyright e 1996 - 2011 SINa Corporation, all Rights Reserved新浪公司<span style=" color: blue;">版权所有</span>
+
+					</p>
+				</div>
+				<div id="div05" style="position: absolute;">
+					<img src="img/logoicon.png" />
+				</div>
+
+				<div id="div01">
+					<div id="div011">
+						<img src="img/bghead_bottom.gif" />
+
+					</div>
+					<div id="div013">
+						<img src="img/bghead_bottom.gif" />
+					</div>
+					<div id="div012" style="position: absolute;">
+						昵称：
+						<input type="text" name="" id="yongHuMing" value="" /><span id="hongDian" style="color: red;">*</span></br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+						<span style="color: #a0a0a0;">6-16位字符（字母，数字）,不区分大小写</span>
+					</div>
+					<div id="div014" style="position: absolute;">
+						所在地区：
+						<select id="shenfen" name="shenfen" onchange="addCity()"></select>省
+						<select id="city" name="city" ></select>市
+						
+					</div>
+					<div id="div015" style="position: absolute;">
+						<p>
+							<span style="color: black;size: 20px;font-weight:900 ;">设置安全信息</span>
+							<span style="color: #df7e20; font-weight: 900;">以下信息对保护您的账号安全极为重要，请慎重填并牢记</span>
+						</p>
+					</div>
+					<div id="div016" style="position: absolute;">
+						新浪登录密码：
+						<input type="password" name="" id="miMa" value="" /><span id="diEr" style="color: red;">*</span></br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span style="color: #a0a0a0;">6-16位字符（字母，数字）,不区分大小写</span>
+					</div>
+					<div id="div017" style="position: absolute;">
+						再次输入密码：
+						<input type="password" name="" id="queRen" value="" /><span id="diSan" style="color: red;">*</span>
+					</div>
+					<div id="div018" style="position: absolute;">
+						<input type="checkbox" name="" id="" value="" /> 我已经看过并同意
+						<a href="#">《新浪网络使用说明书》</a>和
+						<a href="#">《新浪网络邮箱服务条款》</a>
+
+					</div>
+					<div id="div019" style="position: absolute;">
+						<form>
+							<input size="7" type="button" name="" id="button" value="提交" onclick="huMing()"/>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

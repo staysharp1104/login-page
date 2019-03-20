@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <title> New Document </title>
+  <style type="text/css">
+      .div0{
+	    background-image:url(ao.png);
+		width:981px;
+		height:1315px;
+	  }
+	  .div1{
+	     background-image:url(aa.png);
+		 width:981px;
+		height:110px;
+		background-position:50% 50%;
+		background-repeat:no-repeat;
+		float:left;
+	  }
+	  .div2{
+	     background-image:url(标题下.png);
+		 width:924px;
+		height:270px;
+		background-repeat:no-repeat;
+        background-position:50% 50%;
+		float:left;
+		padding-left:40px;
+	  }
+	  
+       .divul{
+	        padding-top:60px;
+			padding-left:60px;
+	  }
+	  .div3{padding-top:-20px;}
+	  .div4{padding-top:-20px;}
+	  .div5{margin-top:-105px;
+	        padding-left:430px; 
+      }
+	  .input{border:0px;
+	         background:none;
+			 background-image:url(pa.png);
+			width:74px; height:40px;
+	  }
+	  .div6{
+	        background-image:url(左上第一排边框一.png); background-repeat:no-repeat;
+			 width:300px;
+		     height:200px;
+			 float:left;
+			 margin-left:30px; margin-top:30px;
+	  }
+	  .div7{
+	        background-image:url(左上第一排边框一.png); background-repeat:no-repeat;
+			 width:300px;
+		     height:200px;
+			 float:left;
+			 margin-left:30px; margin-top:30px;
+	  }
+	  .div8{
+	        background-image:url(第一排最右.png); background-repeat:no-repeat;
+			 width:210px;
+		     height:210px;
+			 float:left;
+			 margin-left:80px; margin-top:30px;
+	  }
+	  .div9{background-image:url(第二行.png); width:685px; background-repeat:no-repeat;
+		     height:120px; float:left; 
+	 }
+	  .div10{background-image:url(第二排.png); width:210px; background-repeat:no-repeat;
+		     height:125px; float:left;
+			 margin-left:50px; 
+	}
+	.div11{background-image:url(第三排第一个.png); width:685px; background-repeat:no-repeat;
+		     height:120px; float:left;
+			 
+	}
+	.div12{background-image:url(第三排右边.png); width:210px; background-repeat:no-repeat;
+		     height:547px; float:right;
+			 margin-right:30px; 
+	}
+	.div13{background-image:url(第四行第一.png); width:685px; background-repeat:no-repeat;
+		     height:120px; float:left; 
+			 
+	}
+	.div14{background-image:url(第四行.png); width:685px; background-repeat:no-repeat;
+		     height:120px; float:left; 
+			 
+	}
+	.div15{background-image:url(第七行1.png); width:333px; background-repeat:no-repeat;
+		     height:127px; float:left; 
+			 
+	}
+	.div16{background-image:url(第七行3.png); width:333px; background-repeat:no-repeat;
+		     height:127px; float:left; 
+			 
+	}
+	.div17{background-image:url(底部.png); width:981px; background-repeat:no-repeat;
+		     height:10px; float:left; 
+			 
+	}
+
+
+  </style>
+ </head>
+
+ <body>
+     <div class="div0">
+	 <div class="div1">
+	 </div>
+	 <div class="div2">
+	     <table width="913px" height="33px">
+		    <tr>
+			  <td width="115px" align="center"><font color="#ffffff">首页</font></td>
+			  <td width="100px"><font color="#ffffff">两岸词典</font></td>
+			  <td width="105px"><font color="#ffffff">科技术语</font></td>
+			  <td width="95px"><font color="#ffffff">资料库</font></td>
+			  <td width="115px"><font color="#ffffff">资源下载</font></td>
+			  <td><font color="#ffffff">联系我们</font></td>
+			</tr>
+		 </table>
+		 <div class="divul">
+		  <p><font size="2px">请输入关键词，例：中国文化</font></p>
+		  <div class="div3">
+		  <font color="#ffffff" size="2px"><p>热点词库搜索</p></font></div>
+		  <div class="div4">
+		  <font color="#ffffff" size="2px"><p>十豆，蒙太奇，云，们，品相，葵心</p></font></div>	 
+		 </div>
+         <div class="div5">
+		    <input type="button" class="input">
+		 </div>
+		  </div>
+	     <div class="div6"> <img src="p1.png"/>   
+		 </div>
+		 <div class="div7">    
+		 </div>
+		 <div class="div8">    
+		 </div>
+		 <div class="div9">    
+		 </div>
+		 <div class="div10">    
+		 </div>
+		 <div class="div11">    
+		 </div>
+		 <div class="div12">    
+		 </div>
+		 <div class="div13">    
+		 </div>
+		 <div class="div14">    
+		 </div>
+		 <div class="div15">    
+		 </div>
+		 <div class="div16">    
+		 </div>
+		 <div class="div17">    
+		 </div>
+	 
+	 
+	 
+	 </div>
+ </body>
+</html>
